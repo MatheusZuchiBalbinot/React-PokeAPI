@@ -1,0 +1,70 @@
+.main_header {
+    display: grid;
+    background-color: rgb(36, 34, 34);
+    grid-template-columns: 0.5fr 2.5fr 0.5fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "poke_icon header_input logout_icon"
+    ;
+}
+
+.poke_icon {
+    grid-area: poke_icon;
+
+}
+.poke_icon img {
+    width: 3vw;
+    height: auto;
+    padding: 1vw;
+    cursor: pointer;
+}
+
+.poke_icon img:hover {
+    background-color: red;
+}
+
+.header_input {
+    grid-area: header_input;
+}
+
+.header_input input {
+    width: 80%;
+    justify-content: center;
+    padding: 1vw;
+    margin: 1vw;
+    border: none;
+    border-top-left-radius: 2vw;
+    border-bottom-left-radius: 2vw;
+}
+
+.header_input button {
+    padding: 1vw;
+    border-radius: 100%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.header_input button:hover {
+    background-color: red;
+}
+
+.header_input svg {
+    cursor: pointer;
+    color: black;
+}
+
+.logout_icon {
+    grid-area: logout_icon;
+}
+
+.logout_icon svg {
+    color: white;
+    font-size: 2vw;
+    padding: 1.5vw;
+    cursor: pointer;
+}
+
+.logout_icon svg:hover {
+    background-color: red;
+}
