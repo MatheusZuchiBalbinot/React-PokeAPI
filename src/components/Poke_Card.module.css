@@ -1,9 +1,25 @@
+.PokeCardDiv {
+    display: grid;  
+    grid-template-columns: 0.9fr 3.5fr 0.9fr;
+    grid-template-rows: auto;
+    grid-template-areas: ". CardsDiv .";
+}
+
+.CardsDiv {
+    grid-area: CardsDiv;
+    display: flex;
+    flex: none;
+    flex-wrap: wrap;
+    padding: 2vw;
+}
+
 .PokeCards {
     display: flex;
     padding: 1.5vw;
     flex: none;
     flex-wrap: wrap;
 }
+
 
 .Card {
     background-color: white;

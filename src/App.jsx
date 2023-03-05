@@ -8,7 +8,7 @@ import { useState } from 'react';
 function App() {
 
   return (
-    <div className={styles.App}>
+    <div className={styles.App}> 
       <Home />
     </div>
   )

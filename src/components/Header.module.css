@@ -1,10 +1,10 @@
 .main_header {
     display: grid;
     background-color: rgb(36, 34, 34);
-    grid-template-columns: 0.5fr 2.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr 0.5fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    "poke_icon header_input logout_icon"
+    ". poke_icon header_input logout_icon ."
     ;
 }
 
