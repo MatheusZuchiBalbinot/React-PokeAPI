@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header';
 import EachPokemon from './poke_Info';
 import styles from './Poke_Card.module.css';
+import SearchPokemon from './search_Pokemon'
 
 function Poke_Card() {
 
@@ -16,7 +17,7 @@ function Poke_Card() {
     return (
       <div className={styles.PokeCardDiv}>
         <div className={styles.CardsDiv}>
-            { list.map((item) => <> <EachPokemon pokemon={item} /> </>)}
+            { list.map((item) => <> <EachPokemon pokemon={item} /> <SearchPokemon pokemon={item}/> </>)}
         </div>
       </div>
     );

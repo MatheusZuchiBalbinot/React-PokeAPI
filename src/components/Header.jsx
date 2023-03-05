@@ -21,7 +21,7 @@ function Header() {
             </div>
             <div className={styles.header_input}>
                 <input type="text" placeholder="Digite o pokemon a ser pesquisado: " onChange={(e) => setSearchValue(e) }></input>
-                <> {<SearchPokemon props={{search}}/>}</>
+                <> {<SearchPokemon props={search}/>}</>
                 <button type="submit"> <BsSearch /> </button>
             </div>
             <div className={styles.logout_icon}>
