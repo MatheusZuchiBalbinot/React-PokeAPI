@@ -5,10 +5,10 @@ import styles from './Poke_Card.module.css'
 const EachPokemon = ( {pokemon} ) => {
     const [pokedata, setPokedata] = useState([]);
 
-    useEffect((e) => {
-      // console.log(pokemon);
+    useEffect(() => {
       fetch(pokemon.url).then((res) => res.json()).then((one_pokemon_url) => setPokedata(one_pokemon_url));
-    }, [pokedata])
+      // console.log(pokedata)
+    }, [])
 
     if (pokedata.sprites) {
       return (

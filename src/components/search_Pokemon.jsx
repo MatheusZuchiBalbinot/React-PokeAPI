@@ -1,30 +1,30 @@
 import Header from "./Header";
 import EachPokemon from "./poke_Info";
+import Poke_Card from "./Poke_Card";
+import styles from './Poke_Card.module.css';
 
-var searched_Pokemons = [];
+var all_Pokemons = [];
 
 const SearchPokemon = ({props, pokemon}) => { 
-    // console.log(props)
-    // { list.map((item) => <> <EachPokemon pokemon={item} /> <SearchPokemon pokemon={item}/> </>)}
-
+    var newPokemons = [];
     if(pokemon) {
-        searched_Pokemons.push(pokemon.name)
-        // console.log(pokemon.name)
-        // console.log(pokemon.length)
-        // console.log(searched_Pokemons);
+        if(!all_Pokemons.includes(pokemon)) {
+            all_Pokemons.push(pokemon)
+            console.log(all_Pokemons)
+        }
     }
-    // console.log(searched_Pokemons.length);
-    for(var i = 0; i < searched_Pokemons.length; i++) {
-        // console.log(searched_Pokemons[i])
-        // console.log(props)
+    for(var i = 0; i < all_Pokemons.length; i++) {
         if(props) {
-            if(searched_Pokemons[i].includes(props)) {
-                // searched_Pokemons.push(searched_Pokemons[i].name);
-                console.log(searched_Pokemons[i]);
+            if(all_Pokemons[i].name.includes(props)) {
+                newPokemons.push(all_Pokemons[i]);
         }
     }
     }
-    // setPokedata(searched_Pokemons);
+    return (
+        <>
+            { newPokemons.map((newPoke) => <> <EachPokemon pokemon={newPoke} /> </>)}
+        </>
+      );
     }
 
 export default SearchPokemon;
