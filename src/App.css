@@ -4,16 +4,6 @@
 }
 
 #root {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: 
-  ". App ."
-  ". App ."
-  ". App ."
-  ;
-  height: 100vh;
-  padding: 0;
   text-align: center;
 }
 

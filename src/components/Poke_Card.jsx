@@ -6,12 +6,10 @@ import styles from './Poke_Card.module.css';
 import SearchPokemon from './search_Pokemon'
 
 function Poke_Card() {
-
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    // fetch('https://pokeapi.co/api/v2/pokemon/4/').then((res) => res.json()).then((data) => console.log(data))
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=20%27%27%27').then((res) => res.json()).then((data) => setList(data.results))
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=100%27%27%27').then((res) => res.json()).then((data) => setList(data.results))  
   }, []);
 
     return (
