@@ -46,7 +46,17 @@
 }
 
 
+/* Tela dos Pokemons */
+
+.divPoke_screen {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-columns: auto;
+    height: 100%;
+}
+
 /* Cor dos tipos dos pokemons */
+
 
 .type_Grass {
     width: 50%; background: #78C850; border-style: solid none; border-width: 1px; border-top-color: #C0F860; border-bottom-color: #588040; border-radius: 5px; padding: 0.15em; font-size: 9pt; color: #F8F8F8; text-shadow: 0px 1px 1px #807870;

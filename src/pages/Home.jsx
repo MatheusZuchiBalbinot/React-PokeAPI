@@ -4,14 +4,14 @@ import Login from './Login';
 
 import { useState } from 'react';
 
-function Home() {
+function Home({searched_pokemon_screen}) {
 
     return (
-        <div>
+        <>
             {/* <Login /> */}
             <Header />
             <Poke_Card />
-        </div>
+        </>
     )
 }
 export default Home;
