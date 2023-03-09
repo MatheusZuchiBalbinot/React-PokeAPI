@@ -8,6 +8,7 @@ function Home() {
 
     return (
         <>
+            <div id='poke_screen'></div>
             {/* <Login /> */}
             <Header />
             <Poke_Card />

@@ -18,9 +18,10 @@ function Poke_Card() {
         <div className={styles.CardsDiv}>
             { list.map((item) => <> <EachPokemon pokemon={item} /> <SearchPokemon pokemon={item}/> </>)}
         </div>
-        <div id='poke_screen'></div>
+        {/* <div id='poke_screen'></div> */}
       </div>
     );
+
 }
 
 export default Poke_Card;

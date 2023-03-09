@@ -50,7 +50,7 @@
 
 .divPoke_screen {
     display: grid;
-    grid-template-rows: 0.5fr 3fr 0.5fr;
+    grid-template-rows: 0.5fr 3fr;
     grid-auto-columns: auto;
     grid-template-areas: 
     "poke_title types"
@@ -61,6 +61,8 @@
 
 .poke_image {
     grid-area: poke_image;
+    display: inline-flex;
+    flex-direction: column;
     padding: 2vw;
     margin: auto;
 }
@@ -74,6 +76,7 @@
     grid-area: types;
     padding: 1.5vw;
     margin: auto;
+    font-size: 1.2vw;
 }
 
 .status {
@@ -83,9 +86,18 @@
     font-size: 1.2vw;
 }
 
+.status_bar {
+    text-align: end; 
+    font-weight: bold;
+}
+
+.background_status_bar {    
+    background-color: gray; 
+    margin: 0.5vw 0 0.5vw 0;
+}
+
 .poke_buttons {
     grid-area: poke_buttons;
-    padding: 1.5vw;
 }
 
 .poke_buttons button {

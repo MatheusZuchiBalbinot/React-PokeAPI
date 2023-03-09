@@ -220,38 +220,86 @@ const EachPokemon = ( {pokemon} ) => {
       }
       // console.log(pokeDict)
       
-    const buy_screen_div = document.getElementById('poke_screen').innerHTML = `<div id="screen"  style="width: 50vw; height: 50vh; background-color: white; color: black; position: fixed; box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8); z-index: 1; justify-content: center; left: 25vw; top: 20vh; padding: 0; margin: 0;"></div> `;
+    const buy_screen_div = document.getElementById('poke_screen').innerHTML = `<div id="screen"  style="width: 50vw; height: auto; background-color: white; color: black; position: fixed; box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8); z-index: 1; justify-content: center; left: 25vw; top: 10vh; margin: 2vw; margin: 0;"></div> `;
     const screen_location =  document.getElementById("screen");
 
     function show_screen_types() {
       if(pokedata.types[1]){
         // console.log(pokedata.types[0].type.name+'e'+ pokedata.types[1].type.name)
-        return(pokedata.types[0].type.name+ ' e ' + pokedata.types[1].type.name)
+        return(pokedata.types[0].type.name+ ' / ' + pokedata.types[1].type.name)
       }
       return(pokedata.types[0].type.name)
+    }
+
+    function avaliatingTheOverall() {
+      const sum = pokeDict.stats.speed + pokeDict.stats.attack + pokeDict.stats.spAttack + pokeDict.stats.spDefense + pokeDict.stats.defense;
+      if(sum > 0 && sum < 360) {
+        var message = "Esse pokemon tem um Overall baixo.";
+      }
+      if(sum >= 360 && sum < 480) {
+        var message = "Esse pokemon tem um Overall medíocre.";
+      }
+      if(sum >= 480 && sum < 600) {
+        var message = "Esse pokemon tem um Overall bom.";
+      }
+      if(sum >= 600) {
+        var message = "Esse pokemon tem um Overall ótimo.";
+      }
+        return(sum + '. <br>'+message);
+    }
+
+    function avaliatingTheStats( one_stat ) {
+      if(one_stat <= 50) {
+        return ('#ff0f35')
+      }
+      if(one_stat > 50 && one_stat <= 99) {
+        return('#f1c972')
+      }
+      else {
+        return('#7ebea3')
+      }
     }
 
     screen_location.innerHTML = 
     `
     <div class=`+styles.divPoke_screen+` > 
-      <h3 class=`+styles.poke_title+` style="text-transform: capitalize; padding: 2vw;"> ` +pokeDict.name+ ` </h3>
+      <h3 class=`+styles.poke_title+` style="text-transform: capitalize; padding: 1vw 0.5vw 1vw 0.5vw; margin: auto;"> ` +pokeDict.name+ ` </h3>  
       <div class=`+styles.poke_image+`>
       <img id="poke_image" src="` + pokedata.sprites.front_default + `" title="Normal">
       <img id="poke_image" src="` + pokedata.sprites.front_shiny + `" title="Shiny">
       </div>
-      <div class=`+styles.status+`> 
-        <p>Attack: ` + pokeDict.stats.attack + ` </p>
-        <p>Defense: ` + pokeDict.stats.defense + ` </p>
-        <p>spDefense: ` + pokeDict.stats.spAttack + ` </p>
-        <p>spAttack: ` + pokeDict.stats.spDefense + ` </p>
-        <p>Speed: ` + pokeDict.stats.speed + ` </p>
+      <div class=`+styles.status+` style="padding: 1vw 0.5vw 1vw 0.5vw; margin: auto;"> 
+      <h5 style="font-size: 1.2vw; margin: auto; padding: 0vw 0vw 0.8vw 0vw;"> Os Status do pokemon são: </h5>
+        <div class"status_value">
+          <p> Attack: </p>
+          <div class=`+styles.background_status_bar+`>
+          <div class=`+styles.status_bar+` style="width:` + pokeDict.stats.attack + `px; background-color: `+avaliatingTheStats(pokeDict.stats.attack)+`"> ` +  pokeDict.stats.attack + ` </div>
+        </div>
+          <p> Defense: </p>
+          <div class=`+styles.background_status_bar+`>
+          <div class=`+styles.status_bar+` style="width:` + pokeDict.stats.defense + `px; background-color:`+avaliatingTheStats(pokeDict.stats.defense)+`"> ` +  pokeDict.stats.defense + ` </div>
+        </div>
+          <p> spAttack: </p>
+          <div class=`+styles.background_status_bar+`>
+          <div class=`+styles.status_bar+` style="width:` + pokeDict.stats.spAttack + `px; background-color: `+avaliatingTheStats(pokeDict.stats.spAttack)+`"> ` +  pokeDict.stats.spAttack + ` </div>
+        </div>
+          <p> spDefense: </p>
+          <div class=`+styles.background_status_bar+`>
+          <div class=`+styles.status_bar+` style="width:` + pokeDict.stats.spDefense + `px; background-color: `+avaliatingTheStats(pokeDict.stats.spDefense)+`"> ` +  pokeDict.stats.spDefense + ` </div>
+        </div>
+          <p> Speed: </p>
+          <div class=`+styles.background_status_bar+`>
+          <div class=`+styles.status_bar+` style="width:` + pokeDict.stats.speed + `px; background-color: `+avaliatingTheStats(pokeDict.stats.speed)+`"> ` +  pokeDict.stats.speed + ` </div>
+        </div>
+        </div>
+        <h5 style="padding: 1vw 0 1vw 0; text-align: center;"> A soma total é: `+ avaliatingTheOverall() +`</h5>
       </div>
         <div class=`+styles.types+`> 
-          <p style="font-size: 1.5vw;"> O pokemon possui o/os tipo/s: </p>
-          <p style="text-transform: capitalize; font-size: 1vw;"> `+ show_screen_types() +` </p
+          <p> O pokemon possui o/os tipo/s: </p>
+          <p style="text-transform: capitalize; font-size: 1.5vw; font-weight: bold;"> `+ show_screen_types() +` </p
         </div>
       </div>
-      <div class=`+styles.poke_buttons+`>
+      <div class=`+styles.poke_buttons+` style="padding: 1.2vw 0.5vw 1.2vw 0.5vw">
         <button type="button" onclick={poke_screen.style.display="none"}> Voltar </button>
         <button type="button" onclick=""> Adicionar a Equipe </button>
       </div>

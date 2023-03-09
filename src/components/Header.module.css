@@ -2,7 +2,7 @@
     display: grid;
     background-color: rgb(36, 34, 34);
     grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr 0.5fr;
-    grid-template-rows: auto;
+    grid-template-rows: 10vh auto;
     grid-template-areas: 
     ". poke_icon header_input logout_icon ."
     ;
@@ -10,36 +10,40 @@
 
 .poke_icon {
     grid-area: poke_icon;
+    margin: auto;
 
 }
 .poke_icon img {
     width: 3vw;
     height: auto;
-    padding: 1vw;
+    padding: 0.5vw;
     cursor: pointer;
 }
 
 .poke_icon img:hover {
-    background-color: red;
+    border-radius: 2vw;
+    border: solid 1px white;
+    color: white;
 }
 
 .header_input {
+    display: flex;
     grid-area: header_input;
+    margin: auto;
+    width: 100%;
 }
 
 .header_input input {
-    width: 80%;
+    outline: none;
     justify-content: center;
-    padding: 1vw;
-    margin: 1vw;
     border: none;
+    width: 80%;
+    padding: 1vw;
     border-top-left-radius: 2vw;
     border-bottom-left-radius: 2vw;
 }
 
-.header_input button {
-    padding: 1vw;
-    border-radius: 100%;
+.header_input span {
     background-color: white;
     border: none;
     cursor: pointer;
@@ -50,21 +54,30 @@
 }
 
 .header_input svg {
+    padding: 1vw;
+    background-color: white;
     cursor: pointer;
     color: black;
+    font-weight: bold;
 }
 
 .logout_icon {
     grid-area: logout_icon;
+    margin: auto;
+    
 }
 
 .logout_icon svg {
+    height: 100%;
+    background-color: rgb(36, 34, 34);
+    cursor: pointer;
     color: white;
     font-size: 2vw;
-    padding: 1.5vw;
-    cursor: pointer;
+    padding: 1vw;
 }
 
 .logout_icon svg:hover {
-    background-color: red;
+    border-radius: 2vw;
+    border: solid 1px white;
+    color: white;
 }
