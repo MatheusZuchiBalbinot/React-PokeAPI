@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import SearchPokemon from './search_Pokemon';
 import styles from './Poke_Card.module.css'
-import Home from '../pages/Home'
-
 
 const EachPokemon = ( {pokemon} ) => {
     const [pokedata, setPokedata] = useState([]);
@@ -221,41 +219,52 @@ const EachPokemon = ( {pokemon} ) => {
         },
       }
       // console.log(pokeDict)
-      // var screen_location = document.getElementById('root')
-      // screen_location.innerHTML = `<div> `+pokeDict.name+` </div>`;
-      // location.reload();
+      
+    const buy_screen_div = document.getElementById('poke_screen').innerHTML = `<div id="screen"  style="width: 50vw; height: 50vh; background-color: white; color: black; position: fixed; box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8); z-index: 1; justify-content: center; left: 25vw; top: 20vh; padding: 0; margin: 0;"></div> `;
+    const screen_location =  document.getElementById("screen");
 
-      const buy_screen_div = document.getElementById('poke_screen').innerHTML = `<div id="screen"  style="width: 50vw; height: 80vh; background-color: white; color: black; position: fixed; box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8); z-index: 1; justify-content: center; left: 25vw; top: 10vh; padding: 0; margin: 0;"></div> `;
-      const screen_location =  document.getElementById("screen");
+    function show_screen_types() {
+      if(pokedata.types[1]){
+        // console.log(pokedata.types[0].type.name+'e'+ pokedata.types[1].type.name)
+        return(pokedata.types[0].type.name+ ' e ' + pokedata.types[1].type.name)
+      }
+      return(pokedata.types[0].type.name)
+    }
 
-      screen_location.innerHTML = 
-      `
-      <div style="display: grid; grid-template-rows: 0.5fr 0.5fr 0.5fr; grid-auto-columns: 0.5fr 0.5fr; height: 100%; grid-template-areas: "poke_image poke_title" ". .";> 
-        <h4 id="poke_title" style="grid-area: poke_title"> ` +pokeDict.name+ ` </h4> 
-        <img id="poke_image" src="` + pokedata.sprites.front_default + `" style="grid-area: poke_image">
-        <div id"poke_types"> 
-            <p style="font-size: 1.5vw;"> O pokemon possui o/os tipos: </p>
-            <p style="text-transform: capitalize"> `+ typesArray[0] +` / `+ typesArray[1] +` </p
+    screen_location.innerHTML = 
+    `
+    <div class=`+styles.divPoke_screen+` > 
+      <h3 class=`+styles.poke_title+` style="text-transform: capitalize; padding: 2vw;"> ` +pokeDict.name+ ` </h3>
+      <div class=`+styles.poke_image+`>
+      <img id="poke_image" src="` + pokedata.sprites.front_default + `" title="Normal">
+      <img id="poke_image" src="` + pokedata.sprites.front_shiny + `" title="Shiny">
+      </div>
+      <div class=`+styles.status+`> 
+        <p>Attack: ` + pokeDict.stats.attack + ` </p>
+        <p>Defense: ` + pokeDict.stats.defense + ` </p>
+        <p>spDefense: ` + pokeDict.stats.spAttack + ` </p>
+        <p>spAttack: ` + pokeDict.stats.spDefense + ` </p>
+        <p>Speed: ` + pokeDict.stats.speed + ` </p>
+      </div>
+        <div class=`+styles.types+`> 
+          <p style="font-size: 1.5vw;"> O pokemon possui o/os tipo/s: </p>
+          <p style="text-transform: capitalize; font-size: 1vw;"> `+ show_screen_types() +` </p
         </div>
-        <div className='Status'> 
-          <p>` + pokeDict.stats.attack + ` </p>
-          <p>` + pokeDict.stats.defense + ` </p>
-          <p>` + pokeDict.stats.spAttack + ` </p>
-          <p>` + pokeDict.stats.spDefense + ` </p>
-          <p>` + pokeDict.stats.speed + ` </p>
-        </div>
+      </div>
+      <div class=`+styles.poke_buttons+`>
         <button type="button" onclick={poke_screen.style.display="none"}> Voltar </button>
         <button type="button" onclick=""> Adicionar a Equipe </button>
       </div>
-      `
-      poke_screen.style.display = "";
-    }
+    </div>
+    `
+    poke_screen.style.display = "";
 
+    }
 
     useEffect(() => {
       fetch(pokemon.url).then((res) => res.json()).then((one_pokemon_url) => setPokedata(one_pokemon_url));
       // console.log(pokedata)
-    }, [])
+    })
 
     if (pokedata.sprites) {
         return (

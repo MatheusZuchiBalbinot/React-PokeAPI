@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Condensed&display=swap');
+
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }  
 
 .form_title {
@@ -8,6 +10,8 @@
 
 .lgn_form {
     padding: 2vw;
+    width: 30%;
+    height: auto;
     position: absolute;
     top: 25%;
     left: 35%;
@@ -26,6 +30,7 @@
     font-size: 1.2vw;
     padding: 2vw;
     margin: 1vw;
+    font-weight: bold;
 }
 
 .submit_button {
@@ -33,7 +38,7 @@
     color: white;
     border-radius: 2vw;
     padding: 1.5vw;
-    width: 100%;
+    width: 70%;
     background-color: rgb(61, 58, 58);
     cursor: pointer;
 }

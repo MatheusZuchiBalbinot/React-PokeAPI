@@ -50,9 +50,51 @@
 
 .divPoke_screen {
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: 0.5fr 3fr 0.5fr;
     grid-auto-columns: auto;
+    grid-template-areas: 
+    "poke_title types"
+    "poke_image status"
+    "poke_buttons poke_buttons";
     height: 100%;
+}
+
+.poke_image {
+    grid-area: poke_image;
+    padding: 2vw;
+    margin: auto;
+}
+
+.poke_title {
+    grid-area: poke_title;
+    text-shadow: 1px 3px 11px rgba(128, 128, 128, 1);
+}
+
+.types {
+    grid-area: types;
+    padding: 1.5vw;
+    margin: auto;
+}
+
+.status {
+    grid-area: status;
+    margin: auto 0;
+    text-align: initial;
+    font-size: 1.2vw;
+}
+
+.poke_buttons {
+    grid-area: poke_buttons;
+    padding: 1.5vw;
+}
+
+.poke_buttons button {
+    background-color: rgb(34, 31, 31);
+    color: white;
+    text-transform: capitalize;
+    padding: 1vw;
+    border-radius: 2vw;
+    font-size: 1vw;
 }
 
 /* Cor dos tipos dos pokemons */

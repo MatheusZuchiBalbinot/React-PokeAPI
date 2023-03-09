@@ -4,7 +4,7 @@ import Login from './Login';
 
 import { useState } from 'react';
 
-function Home({searched_pokemon_screen}) {
+function Home() {
 
     return (
         <>

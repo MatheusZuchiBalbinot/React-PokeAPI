@@ -3,7 +3,7 @@ import Home from './Home'
 import styles from './Login.module.css';
 
 
-function Login({childToParent}) {
+function Login( {childToParent} ) {
     function handleSubmit(e) {
         e.preventDefault();
         loginVerification()
@@ -12,7 +12,8 @@ function Login({childToParent}) {
     function loginVerification() {
         if(login === 'Matheus' && password === '123')  
         {
-            console.log('a');
+            const validation = true;
+            console.log('entrou');
         }
     }
 
