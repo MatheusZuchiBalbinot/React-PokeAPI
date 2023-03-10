@@ -25,7 +25,7 @@ const SearchPokemon = ({pokemon, props}) => {
     return (
         <>
             { newPokemons.map((newPoke) => <> <EachPokemon pokemon={newPoke} /> </>)}
-            {/* {console.log(newPokemons)} */}
+            {console.log(newPokemons)}
         </>
       );
     }

@@ -30,17 +30,21 @@
     display: flex;
     grid-area: header_input;
     margin: auto;
-    width: 100%;
+    width: 80%;
 }
 
 .header_input input {
     outline: none;
     justify-content: center;
     border: none;
-    width: 80%;
+    width: 100%;
     padding: 1vw;
     border-top-left-radius: 2vw;
     border-bottom-left-radius: 2vw;
+}
+
+.header_input input:hover {
+    font-weight: bold;
 }
 
 .header_input span {
@@ -49,15 +53,17 @@
     cursor: pointer;
 }
 
-.header_input button:hover {
-    background-color: red;
-}
-
 .header_input svg {
     padding: 1vw;
     background-color: white;
     cursor: pointer;
     color: black;
+    font-weight: bold;
+}
+
+.header_input svg:hover {
+    background-color: rgba(230, 177, 177, 0.171);
+    color: white;
     font-weight: bold;
 }
 

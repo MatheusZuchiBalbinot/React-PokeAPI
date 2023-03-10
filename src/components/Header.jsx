@@ -20,8 +20,8 @@ function Header() {
                 <img src="https://cdn-icons-png.flaticon.com/512/1169/1169608.png" />
             </div>
             <div className={styles.header_input}>
-                <input type="text" placeholder="Digite o pokemon a ser pesquisado: " onChange={(e) => setSearchValue(e) }></input>
-                <BsSearch /> {<SearchPokemon props={search}/>} 
+                <input type="text" placeholder="Digite o pokemon a ser pesquisado: " onChange={(e) => setSearchValue(e)  }></input>
+                <BsSearch /> <SearchPokemon props={search}/>
             </div>
             <div className={styles.logout_icon}>
                 <FiLogOut  />

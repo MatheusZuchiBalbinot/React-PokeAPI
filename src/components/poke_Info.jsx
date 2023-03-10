@@ -243,7 +243,7 @@ const EachPokemon = ( {pokemon} ) => {
         var message = "Esse pokemon tem um Overall bom.";
       }
       if(sum >= 600) {
-        var message = "Esse pokemon tem um Overall ótimo.";
+        var message = "Esse pokemon tem um Overall perfeito.";
       }
         return(sum + '. <br>'+message);
     }
