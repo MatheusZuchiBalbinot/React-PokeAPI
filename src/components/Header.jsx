@@ -14,6 +14,7 @@ function Header() {
         setSearch(e.target.value);
     }
 
+
     return (
         <div className={styles.main_header} >
             <div className={styles.poke_icon}>
@@ -21,12 +22,16 @@ function Header() {
             </div>
             <div className={styles.header_input}>
                 <input type="text" placeholder="Digite o pokemon a ser pesquisado: " onChange={(e) => setSearchValue(e)  }></input>
-                <BsSearch /> <SearchPokemon props={search}/>
+                <BsSearch /> 
             </div>
             <div className={styles.logout_icon}>
                 <FiLogOut  />
             </div>
+            <div className={styles.searched_pokemons}>
+                {search ? <> <h3>Pokemons pesquisados: </h3> <div className={styles.searched_pokemons_div}><SearchPokemon props={search}/> </div> </> : null}
+            </div>
         </div>
+            
     )
 }
 

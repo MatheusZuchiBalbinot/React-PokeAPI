@@ -1,8 +1,22 @@
 .PokeCardDiv {
     display: grid;  
-    grid-template-columns: 0.9fr 3.5fr 0.9fr;
+    grid-template-columns: 0.9fr 3.5fr 0.5fr;
     grid-template-rows: auto;
-    grid-template-areas: ". CardsDiv .";
+    grid-template-areas: "select_configs CardsDiv .";
+}
+
+.select_configs{
+    grid-area: select_configs;
+    position: fixed;
+    left: 0%;
+    width: 20vw;
+}
+
+.select_configs_button {
+    padding: 0.2vw;
+    margin: 0.5vw;
+    font-size: 1.2vw;
+    width: 40%;
 }
 
 .CardsDiv {
@@ -26,6 +40,7 @@
     background-color: white;
     color: black;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    width: 8vw;
     height: auto;
     cursor: pointer;
 }
