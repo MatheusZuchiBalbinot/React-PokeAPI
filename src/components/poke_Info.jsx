@@ -183,7 +183,7 @@ const EachPokemon = ( {pokemon},clickedtype_value ) => {
             if(pokedata.types[0].type.name == 'psychic') {
               var color_Class = styles.type_Psychic;
             }
-            return (<><p className={color_Class} style={{width: 50}}> {pokedata.types[0].type.name} </p></>)
+            return (<><p className={color_Class}> {pokedata.types[0].type.name} </p></>)
           }
         }}
     }
@@ -222,7 +222,7 @@ const EachPokemon = ( {pokemon},clickedtype_value ) => {
       }
       // console.log(pokeDict)
       
-    const buy_screen_div = document.getElementById('poke_screen').innerHTML = `<div id="screen"  style="width: 50vw; height: auto; background-color: white; color: black; position: fixed; box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8); z-index: 1; justify-content: center; left: 25vw; top: 10vh; margin: 2vw; margin: 0;"></div> `;
+    const buy_screen_div = document.getElementById('poke_screen').innerHTML = `<div id="screen"  class=`+styles.poke_screen_card+`></div> `;
     const screen_location =  document.getElementById("screen");
 
     function show_screen_types() {
@@ -265,13 +265,13 @@ const EachPokemon = ( {pokemon},clickedtype_value ) => {
     screen_location.innerHTML = 
     `
     <div class=`+styles.divPoke_screen+` > 
-      <h3 class=`+styles.poke_title+` style="text-transform: capitalize; padding: 1vw 0.5vw 1vw 0.5vw; margin: auto;"> ` +pokeDict.name+ ` </h3>  
+      <h3 class=`+styles.poke_title+`> ` +pokeDict.name+ ` </h3>  
       <div class=`+styles.poke_image+`>
       <img id="poke_image" src="` + pokedata.sprites.front_default + `" title="Normal">
       <img id="poke_image" src="` + pokedata.sprites.front_shiny + `" title="Shiny">
       </div>
-      <div class=`+styles.status+` style="padding: 1vw 0.5vw 1vw 0.5vw; margin: auto;"> 
-      <h5 style="font-size: 1.2vw; margin: auto; padding: 0vw 0vw 0.8vw 0vw;"> Os Status do pokemon são: </h5>
+      <div class=`+styles.status+`> 
+      <h5 class=`+styles.status_title+`> Os Status do pokemon são: </h5>
         <div class"status_value">
           <p> Attack: </p>
           <div class=`+styles.background_status_bar+`>
@@ -298,10 +298,10 @@ const EachPokemon = ( {pokemon},clickedtype_value ) => {
       </div>
         <div class=`+styles.types+`> 
           <p> O pokemon possui o/os tipo/s: </p>
-          <p style="text-transform: capitalize; font-size: 1.5vw; font-weight: bold;"> `+ show_screen_types() +` </p
+          <p class=`+styles.screen_type_div+`> `+ show_screen_types() +` </p
         </div>
       </div>
-      <div class=`+styles.poke_buttons+` style="padding: 1.2vw 0.5vw 1.2vw 0.5vw">
+      <div class=`+styles.poke_buttons+` >
         <button type="button" onclick={poke_screen.style.display="none"}> Voltar </button>
       </div>
     </div>
@@ -320,7 +320,7 @@ const EachPokemon = ( {pokemon},clickedtype_value ) => {
         return (
           <div className={styles.PokeCards} onClick={PokeScreen}>
             <div className={styles.Card}>
-            <img src={pokedata.sprites.front_default} style={{width: '100px', height: 'auto'}} alt={pokemon.name}></img>
+            <img src={pokedata.sprites.front_default} className={styles.poke_image_div} alt={pokemon.name}></img>
             <div className="values">
               <h4 className={styles.card_title}> {pokemon.name} </h4>
               <div className={styles.typesDiv}>{ShowType()}</div>

@@ -1,12 +1,13 @@
 .main_header {
     display: grid;
     background-color: rgb(36, 34, 34);
-    grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr 0.5fr;
-    grid-template-rows: 10vh auto;
+    grid-template-columns: 0.5fr 1.8fr 2fr 0.5fr;
+    grid-template-rows: auto;
     grid-template-areas: 
-    ". poke_icon header_input logout_icon ."
-    ".  searched_pokemons searched_pokemons searched_pokemons ."
+    ". poke_icon header_input  ."
+    " . searched_pokemons searched_pokemons ."
     ;
+    padding: 2vh;
 }
 
 .searched_pokemons {
