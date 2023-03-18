@@ -1,6 +1,6 @@
 .PokeCardDiv {
     display: grid;  
-    grid-template-columns: 0.9fr 3.5fr 0.5fr;
+    grid-template-columns: 0.5fr 3.5fr 0.5fr;
     grid-template-rows: auto;
     grid-template-areas: "select_configs CardsDiv .";
 }
@@ -10,13 +10,6 @@
     position: fixed;
     left: 0%;
     width: 20vw;
-}
-
-.select_configs_button {
-    padding: 0.2vw;
-    margin: 0.5vw;
-    font-size: 1.2vw;
-    width: 40%;
 }
 
 .CardsDiv {
@@ -122,6 +115,7 @@
     padding: 1vw;
     border-radius: 2vw;
     font-size: 1vw;
+    width: 35%;
 }
 
 /* Cor dos tipos dos pokemons */

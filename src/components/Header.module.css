@@ -81,23 +81,21 @@
     font-weight: bold;
 }
 
-.logout_icon {
-    grid-area: logout_icon;
-    margin: auto;
-    
-}
-
-.logout_icon svg {
-    height: 100%;
-    background-color: rgb(36, 34, 34);
-    cursor: pointer;
-    color: white;
-    font-size: 2vw;
-    padding: 1vw;
-}
-
 .logout_icon svg:hover {
     border-radius: 2vw;
     border: solid 1px white;
     color: white;
+}
+
+@media screen and (max-width: 848px) {
+
+    .header_input {
+        width: 100%;
+    }
+    .header_input input {
+        font-size: 1.5vh;
+    }
+    .poke_icon img {
+        width: 3vh;
+    }
 }

@@ -6,7 +6,6 @@ import styles from './Poke_Card.module.css';
 var all_Pokemons = [];
 
 const SearchPokemon = ({pokemon, props}) => {
-    // console.log('voltou');
     var newPokemons = [];
     if(pokemon) {
         if(!all_Pokemons.includes(pokemon)) {

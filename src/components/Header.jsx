@@ -6,14 +6,13 @@ import { useEffect, useState } from 'react';
 
 import SearchPokemon from './search_Pokemon';
 
-function Header() {
+function Header( {pokemonsCount}) {
 
     const [search, setSearch] = useState('');
 
     function setSearchValue(e) {
         setSearch(e.target.value);
     }
-
 
     return (
         <div className={styles.main_header} >
@@ -24,11 +23,11 @@ function Header() {
                 <input type="text" placeholder="Digite o pokemon a ser pesquisado: " onChange={(e) => setSearchValue(e)  }></input>
                 <BsSearch /> 
             </div>
-            <div className={styles.logout_icon}>
+            {/* <div className={styles.logout_icon}>
                 <FiLogOut  />
-            </div>
+            </div> */}
             <div className={styles.searched_pokemons}>
-                {search ? <> <h3>Pokemons pesquisados: </h3> <div className={styles.searched_pokemons_div}><SearchPokemon props={search}/> </div> </> : null}
+                {search ? <> <h3>Pokemons pesquisados: {pokemonsCount} </h3> <div className={styles.searched_pokemons_div}><SearchPokemon props={search}/> </div> </> : null}
             </div>
         </div>
             

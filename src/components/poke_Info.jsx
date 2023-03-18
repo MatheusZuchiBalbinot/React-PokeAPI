@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import SearchPokemon from './search_Pokemon';
-import styles from './Poke_Card.module.css'
+import styles from './Poke_Card.module.css';
+import Poke_Card from './Poke_Card';
 
-const EachPokemon = ( {pokemon} ) => {
+const EachPokemon = ( {pokemon},clickedtype_value ) => {
     const [pokedata, setPokedata] = useState([]);
 
+    
     function ShowType() {
       const poketypes = ['grass','poison','ground','rock','water','fairy','dark','ice','dragon','flying','bug','normal','electric','fire','fighting','psychic','steel','ghost'];
       if(pokedata.types[1]) {
@@ -301,7 +303,6 @@ const EachPokemon = ( {pokemon} ) => {
       </div>
       <div class=`+styles.poke_buttons+` style="padding: 1.2vw 0.5vw 1.2vw 0.5vw">
         <button type="button" onclick={poke_screen.style.display="none"}> Voltar </button>
-        <button type="button" onclick=""> Adicionar a Equipe </button>
       </div>
     </div>
     `
@@ -315,6 +316,7 @@ const EachPokemon = ( {pokemon} ) => {
     })
 
     if (pokedata.sprites) {
+      // console.log(pokedata);
         return (
           <div className={styles.PokeCards} onClick={PokeScreen}>
             <div className={styles.Card}>
@@ -327,8 +329,6 @@ const EachPokemon = ( {pokemon} ) => {
           </div>
         )
     }
-
-
   }
 
 export default EachPokemon;
