@@ -12,3 +12,7 @@
 
 ## Tela do Pokemon:
 ![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/React-PokeAPI/main/Images/pokescreen.png)
+
+![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/React-PokeAPI/main/Images/pokescreen2.png)
+
+![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/React-PokeAPI/main/Images/pokescreen3.png)
