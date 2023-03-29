@@ -1,4 +1,4 @@
-# Discontada-WebSite
+# React-PokeAPI
 ### Olá, meu nome é Matheus Zuchi Balbinot e esse é um projeto que fiz do zero durante as férias. 
 ## Breve descrição do projeto:
 
