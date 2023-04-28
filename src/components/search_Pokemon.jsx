@@ -10,7 +10,6 @@ const SearchPokemon = ({pokemon, props}) => {
     if(pokemon) {
         if(!all_Pokemons.includes(pokemon)) {
             all_Pokemons.push(pokemon)
-            // console.log(all_Pokemons)
         }
     }
     for(var i = 0; i < all_Pokemons.length; i++) {
@@ -25,7 +24,6 @@ const SearchPokemon = ({pokemon, props}) => {
     return (
         <>
             { newPokemons.map((newPoke) => <> <EachPokemon pokemon={newPoke} /> </>)}
-            {/* {console.log(newPokemons)} */}
         </>
       );
     }
