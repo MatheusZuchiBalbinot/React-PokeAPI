@@ -23,9 +23,6 @@ function Header( {pokemonsCount}) {
                 <input type="text" placeholder="Digite o pokemon a ser pesquisado: " onChange={(e) => setSearchValue(e)  }></input>
                 <BsSearch /> 
             </div>
-            {/* <div className={styles.logout_icon}>
-                <FiLogOut  />
-            </div> */}
             <div className={styles.searched_pokemons}>
                 {search ? <> <h3>Pokemons pesquisados: {pokemonsCount} </h3> <div className={styles.searched_pokemons_div}><SearchPokemon props={search}/> </div> </> : null}
             </div>
