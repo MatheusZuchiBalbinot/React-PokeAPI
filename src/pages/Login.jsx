@@ -13,7 +13,6 @@ function Login( {childToParent} ) {
         if(login === 'Matheus' && password === '123')  
         {
             const validation = true;
-            console.log('entrou');
         }
     }
 
