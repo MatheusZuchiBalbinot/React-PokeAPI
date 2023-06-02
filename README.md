@@ -1,5 +1,4 @@
 # React-PokeAPI
-
 Aplicação simples usando React para consumo da PokeAPI com renderização de mais de 1000 cards.
 
 ### Olá, meu nome é Matheus Zuchi Balbinot e esse é um projeto que fiz do zero durante as férias. 
